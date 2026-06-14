@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #1579c1; /* Bright Blue */
+  --color-brand-secondary: #0a4f82; /* Dark Blue */
+  --color-brand-light: #8cbce6; /* Light Blue */
+  
+  --color-bg-base: #f0f0f0;
+  --color-bg-card: #ffffff;
+  --color-border-card: #e5e5e5;
+  
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-heading: 'Syne', system-ui, sans-serif;
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  body {
+    background-color: var(--color-bg-base);
+    color: #1a1a1a;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: #000000;
+  }
+}
+
+@layer utilities {
+  .glass-nav {
+    @apply bg-white/80 backdrop-blur-md border-b border-black/5;
+  }
+  
+  .glass-card {
+    @apply bg-[var(--color-bg-card)] border border-[var(--color-border-card)] backdrop-blur-sm rounded-2xl;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[var(--color-brand-light)] via-[var(--color-brand-primary)] to-[var(--color-brand-secondary)];
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
