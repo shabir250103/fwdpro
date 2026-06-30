@@ -1,6 +1,4 @@
-import React from 'react';
 import { Mail, ArrowRight } from 'lucide-react';
-import logo from '../../assets/fwd logo.svg.png';
 import footerBackdrop from '../../assets/footer_backdrop.png';
 
 const Footer = () => {

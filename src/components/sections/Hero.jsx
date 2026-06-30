@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Hero = () => {
@@ -15,7 +15,6 @@ const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[var(--color-bg-base)]">
-      
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden flex flex-col justify-center opacity-[0.04]">
         {[...Array(20)].map((_, i) => (
@@ -32,7 +31,7 @@ const Hero = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] bg-brand-primary/10 rounded-full blur-[100px] pointer-events-none z-0" />
 
       {/* Main Huge Typography Content - Fitted to screen */}
-      <div className="w-full px-4 relative z-10 flex flex-col items-center justify-center pointer-events-none">
+      <div className="w-full px-4 relative z-10 flex flex-col items-center justify-center">
         
         <div className="flex items-center justify-center text-center w-full">
           {/* Adjusted text size to ensure it fits perfectly without overflowing */}
@@ -57,6 +56,14 @@ const Hero = () => {
           </h1>
         </div>
 
+        <div className="mt-12 flex flex-col items-center gap-5 text-center">
+          <div className="inline-flex items-center rounded-full border border-black/10 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-gray-700 shadow-sm backdrop-blur-sm">
+            Crafted for startups, scaleups, and ambitious digital products
+          </div>
+          <button className="rounded-full bg-gradient-to-r from-brand-secondary to-brand-primary px-8 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white shadow-[0_18px_45px_rgba(21,121,193,0.24)] transition hover:brightness-110">
+            Explore our work
+          </button>
+        </div>
       </div>
     </section>
   );

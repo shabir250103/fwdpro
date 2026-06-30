@@ -42,7 +42,7 @@
   }
   
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-[var(--color-brand-light)] via-[var(--color-brand-primary)] to-[var(--color-brand-secondary)];
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[var(--color-brand-secondary)] via-[var(--color-brand-primary)] to-[var(--color-brand-light)];
   }
 }
 
