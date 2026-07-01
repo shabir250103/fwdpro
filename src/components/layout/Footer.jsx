@@ -1,7 +1,45 @@
+import { useState } from 'react';
 import { Mail, ArrowRight } from 'lucide-react';
 import footerBackdrop from '../../assets/footer_backdrop.png';
 
 const Footer = () => {
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState('idle'); // idle, loading, success, error
+
+  const handleNewsletterSubmit = async (e) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setStatus('loading');
+    
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: 'd624ecf8-4d62-4650-9105-bcedf1a5b5d1',
+          email: email,
+          subject: 'New Newsletter Subscription',
+          message: `New subscription request from: ${email}`,
+          from_name: 'FWDPRO Newsletter'
+        })
+      });
+      
+      const result = await response.json();
+      if (result.success) {
+        setStatus('success');
+        setEmail('');
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setStatus('error');
+    }
+  };
   return (
     <footer className="relative w-full overflow-hidden border-t border-blue-400/20 bg-gradient-to-r from-[#1579c1] to-[#063559] pt-6 text-white sm:pt-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -19,19 +57,30 @@ const Footer = () => {
           {/* Newsletter */}
           <div className="w-full lg:w-auto">
              <p className="mb-2 text-xs font-medium text-blue-100 sm:text-sm">Get weekly market insights.</p>
-             <div className="relative mx-auto w-full max-w-sm sm:w-80 lg:mx-0">
+             <form onSubmit={handleNewsletterSubmit} className="relative mx-auto w-full max-w-sm sm:w-80 lg:mx-0">
                 <input 
                   type="email" 
-                  placeholder="Your professional email address." 
-                  className="w-full rounded-full border border-white/20 bg-black/20 py-2.5 pl-10 pr-12 text-xs text-white shadow-inner transition-colors placeholder:text-blue-200/50 focus:border-white focus:outline-none sm:text-sm" 
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  disabled={status === 'loading' || status === 'success'}
+                  placeholder={status === 'success' ? "Thank you!" : "Your professional email address."} 
+                  className="w-full rounded-full border border-white/20 bg-black/20 py-2.5 pl-10 pr-12 text-xs text-white shadow-inner transition-colors placeholder:text-blue-200/50 focus:border-white focus:outline-none sm:text-sm disabled:opacity-50" 
                 />
                 <Mail className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-blue-200/50" />
                 <button 
-                  className="absolute bottom-1.5 right-1.5 top-1.5 flex w-8 items-center justify-center rounded-full bg-white shadow-md transition-colors hover:bg-blue-50"
+                  type="submit"
+                  disabled={status === 'loading' || status === 'success'}
+                  className="absolute bottom-1.5 right-1.5 top-1.5 flex w-8 items-center justify-center rounded-full bg-white shadow-md transition-colors hover:bg-blue-50 disabled:opacity-50"
                 >
-                   <ArrowRight className="w-4 h-4 text-[#0c5991]" />
+                   {status === 'loading' ? (
+                     <div className="h-4 w-4 animate-spin rounded-full border-2 border-[#0c5991] border-t-transparent" />
+                   ) : (
+                     <ArrowRight className="w-4 h-4 text-[#0c5991]" />
+                   )}
                 </button>
-             </div>
+             </form>
+             {status === 'error' && <p className="mt-2 text-xs text-red-300">Something went wrong. Please try again.</p>}
           </div>
         </div>
 

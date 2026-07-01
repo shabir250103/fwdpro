@@ -81,7 +81,7 @@ const ConnectModal = ({ isOpen, onClose }) => {
 
             <div className="grid gap-3">
               <a
-                href="https://wa.me/15551234567"
+                href="https://wa.me/9344078224"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex w-full items-center justify-start gap-3 rounded-[20px] bg-gradient-to-r from-[var(--color-brand-primary)] to-[var(--color-brand-secondary)] px-4 py-3 text-white font-semibold"
@@ -99,7 +99,7 @@ const ConnectModal = ({ isOpen, onClose }) => {
               </a>
 
               <a
-                href="https://instagram.com/fwdpro"
+                href="https://instagram.com/fwdpro_solutions"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex w-full items-center justify-start gap-3 rounded-[20px] bg-white text-brand-secondary px-4 py-3 border border-brand-primary/10"

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle, Sparkles } from 'lucide-react';
 
@@ -91,13 +92,13 @@ const ServicePageShell = ({ eyebrow, title, titleAccent, description, proofPoint
                     ))}
                   </div>
 
-                  <a
-                    href={`#${section.id}`}
+                  <Link
+                    to={`/services/${section.id}`}
                     className="mt-6 inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-brand-primary/20 bg-white px-5 text-xs font-bold uppercase tracking-[0.14em] text-brand-secondary shadow-sm transition hover:border-brand-primary/40 hover:text-brand-primary"
                   >
                     Explore
                     <ArrowRight className="h-4 w-4" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </motion.section>
