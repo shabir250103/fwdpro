@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Menu, X, ChevronDown, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import ConnectModal from '../ui/ConnectModal';
@@ -65,14 +65,14 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'py-4 bg-white/10 backdrop-blur-xl border-b border-white/10 shadow-[0_15px_40px_rgba(15,23,42,0.08)]' : 'py-6 bg-transparent'}`}>
+    <nav className={`fixed top-0 z-50 w-full transition-all duration-300 ${scrolled || isOpen ? 'py-3 bg-white/80 backdrop-blur-xl border-b border-brand-primary/10 shadow-[0_15px_40px_rgba(15,23,42,0.08)]' : 'py-5 bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center relative">
+        <div className="relative flex items-center justify-between">
 
           {/* Logo - Left Side */}
-          <div className="flex-shrink-0 flex items-center">
+          <div className="flex flex-shrink-0 items-center">
             <Link to="/">
-              <img src={logo} alt="FWDPRO" className="h-10 md:h-14 w-auto" />
+              <img src={logo} alt="FWDPRO" className="h-9 w-auto md:h-14" />
             </Link>
           </div>
 
@@ -132,7 +132,7 @@ const Navbar = () => {
           </div>
 
           {/* Right side - CTA + Mobile toggle */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             <button
               onClick={() => setIsModalOpen(true)}
               className="hidden lg:inline-flex items-center justify-center rounded-full bg-brand-primary px-5 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-brand-secondary focus:outline-none focus:ring-2 focus:ring-brand-primary/70"
@@ -141,15 +141,16 @@ const Navbar = () => {
             </button>
             <button
               onClick={() => setIsModalOpen(true)}
-              className="inline-flex lg:hidden items-center justify-center rounded-full bg-brand-primary px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-brand-secondary focus:outline-none focus:ring-2 focus:ring-brand-primary/70"
+              className="inline-flex min-h-10 items-center justify-center rounded-full bg-brand-primary px-4 text-[10px] font-semibold uppercase tracking-[0.14em] text-white shadow-[0_12px_30px_rgba(21,121,193,0.22)] transition hover:bg-brand-secondary focus:outline-none focus:ring-2 focus:ring-brand-primary/70 lg:hidden"
             >
               Contact
             </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden text-brand-secondary hover:text-brand-primary focus:outline-none"
+              aria-label={isOpen ? 'Close menu' : 'Open menu'}
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-brand-primary/20 bg-white/85 text-brand-secondary shadow-sm backdrop-blur transition hover:text-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/60 lg:hidden"
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
           </div>
 
@@ -163,26 +164,30 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-t border-brand-light/20 shadow-2xl absolute w-full top-full"
+            className="absolute inset-x-0 top-full px-4 pt-3 lg:hidden"
           >
-            <div className="px-4 py-6 flex flex-col space-y-2 max-h-[70vh] overflow-y-auto">
+            <div className="mx-auto flex max-h-[76vh] max-w-md flex-col gap-3 overflow-y-auto rounded-[1.5rem] border border-brand-primary/10 bg-white/95 p-3 shadow-[0_24px_70px_rgba(10,79,130,0.18)] backdrop-blur-xl">
               {navLinks.map((link) => (
-                <div key={link.name} className="border-b border-brand-light/10 pb-2">
+                <div key={link.name} className="rounded-2xl border border-brand-light/20 bg-[#f7fbff] p-2">
                   <Link
                     to={link.path}
-                    onClick={() => setIsOpen(false)}
-                    className="block px-2 py-2 text-sm font-bold uppercase tracking-wider text-brand-secondary hover:text-brand-primary transition-colors"
+                    onClick={() => {
+                      setActiveLink(link.name);
+                      setIsOpen(false);
+                    }}
+                    className="flex min-h-11 items-center justify-between rounded-xl px-3 text-sm font-bold uppercase tracking-wider text-brand-secondary transition-colors hover:bg-white hover:text-brand-primary"
                   >
-                    {link.name}
+                    <span>{link.name}</span>
+                    <ArrowRight className="h-4 w-4 text-brand-primary/70" />
                   </Link>
                   {link.sub.length > 0 && (
-                    <div className="flex flex-col pl-4 space-y-1 mt-1">
+                    <div className="mt-2 grid grid-cols-1 gap-1.5 px-1 pb-1">
                       {link.sub.map((item, idx) => (
                         <Link
                           key={idx}
                           to={item.path}
                           onClick={() => setIsOpen(false)}
-                          className="block px-2 py-2 text-sm font-medium text-gray-500 hover:text-brand-primary transition-colors"
+                          className="rounded-xl bg-white/75 px-3 py-2 text-sm font-medium text-gray-600 transition-colors hover:text-brand-primary"
                         >
                           {item.name}
                         </Link>
@@ -196,9 +201,10 @@ const Navbar = () => {
                   setIsModalOpen(true);
                   setIsOpen(false);
                 }}
-                className="w-full rounded-full bg-brand-primary px-4 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-white transition hover:bg-brand-secondary"
+                className="mt-1 flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-brand-secondary to-brand-primary px-4 text-sm font-semibold uppercase tracking-[0.16em] text-white shadow-[0_16px_36px_rgba(21,121,193,0.24)] transition hover:brightness-110"
               >
                 Contact Us
+                <ArrowRight className="h-4 w-4" />
               </button>
             </div>
           </motion.div>

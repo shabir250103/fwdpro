@@ -34,7 +34,7 @@ const floatingCards = [
 
 const AgencyShowcase = () => {
   return (
-    <section className="relative overflow-hidden bg-[#f7fbff] py-20 sm:py-24 lg:py-28">
+    <section className="relative overflow-hidden bg-[#f7fbff] py-16 sm:py-24 lg:py-28">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-32 border-t border-[#1579c1]/10 bg-gradient-to-b from-white/80 to-transparent" />
 
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[28rem] w-[28rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-primary/10 blur-3xl" />
@@ -74,7 +74,7 @@ const AgencyShowcase = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.55 }}
-            className="inline-flex items-center gap-2 rounded-full border border-brand-primary/15 bg-white/80 px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-brand-secondary shadow-sm backdrop-blur"
+            className="inline-flex max-w-full items-center gap-2 rounded-full border border-brand-primary/15 bg-white/80 px-4 py-2 text-center text-[10px] font-bold uppercase tracking-[0.16em] text-brand-secondary shadow-sm backdrop-blur sm:text-xs sm:tracking-[0.22em]"
           >
             <span className="h-2 w-2 rounded-full bg-brand-primary" />
             Digital Growth Agency
@@ -85,7 +85,7 @@ const AgencyShowcase = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-7 max-w-4xl text-4xl font-bold leading-[1.05] tracking-tight text-black sm:text-5xl lg:text-[4.8rem]"
+            className="mt-6 max-w-4xl text-4xl font-bold leading-[1.08] tracking-tight text-black sm:mt-7 sm:text-5xl lg:text-[4.8rem] lg:leading-[1.05]"
           >
             Transforming Ideas Into{' '}
             <span className="text-gradient inline-block pr-2 pb-5">Digital Growth</span>
@@ -96,7 +96,7 @@ const AgencyShowcase = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-6 max-w-2xl text-base leading-7 text-gray-600 md:text-lg"
+            className="mt-5 max-w-2xl text-base leading-7 text-gray-600 md:text-lg"
           >
             We combine websites, SEO, and digital marketing into focused systems that help ambitious businesses attract better leads and grow with confidence.
           </motion.p>
@@ -106,7 +106,7 @@ const AgencyShowcase = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-9 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center sm:justify-center"
+            className="mt-8 flex w-full max-w-sm flex-col gap-3 sm:w-auto sm:max-w-none sm:flex-row sm:items-center sm:justify-center"
           >
             <a
               href="#services"
@@ -125,7 +125,7 @@ const AgencyShowcase = () => {
           </motion.div>
         </div>
 
-        <div className="relative z-20 mt-12 grid gap-4 sm:grid-cols-2 lg:absolute lg:inset-0 lg:mt-0 lg:block">
+        <div className="relative z-20 mt-10 grid grid-cols-2 gap-3 sm:gap-4 lg:absolute lg:inset-0 lg:mt-0 lg:block">
           {floatingCards.map((card, idx) => {
             const Icon = card.icon;
 
@@ -148,13 +148,13 @@ const AgencyShowcase = () => {
                     ease: 'easeInOut',
                   }}
                   whileHover={{ y: -6, scale: 1.02 }}
-                  className="h-full rounded-[1.15rem] border border-white/80 bg-white/90 p-4 shadow-[0_24px_70px_rgba(10,79,130,0.12)] backdrop-blur-xl lg:w-[220px]"
+                  className="h-full rounded-2xl border border-white/80 bg-white/90 p-3 text-center shadow-[0_18px_45px_rgba(10,79,130,0.1)] backdrop-blur-xl sm:p-4 sm:text-left lg:w-[220px] lg:rounded-[1.15rem] lg:shadow-[0_24px_70px_rgba(10,79,130,0.12)]"
                 >
-                  <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-primary/10 text-brand-primary">
+                  <div className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-xl bg-brand-primary/10 text-brand-primary sm:h-10 sm:w-10">
                     <Icon className="h-4 w-4" />
                   </div>
-                  <h3 className="text-base font-bold text-black">{card.title}</h3>
-                  <p className="mt-2 text-xs leading-5 text-gray-600">{card.description}</p>
+                  <h3 className="text-sm font-bold leading-tight text-black sm:text-base">{card.title}</h3>
+                  <p className="mt-2 text-[11px] leading-5 text-gray-600 sm:text-xs">{card.description}</p>
                 </motion.div>
               </motion.article>
             );

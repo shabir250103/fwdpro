@@ -39,7 +39,7 @@ const Stats = () => {
   });
 
   return (
-    <section className="relative py-24 bg-[var(--color-bg-base)] overflow-hidden border-t border-black/5">
+    <section className="relative overflow-hidden border-t border-black/5 bg-[var(--color-bg-base)] py-16 sm:py-24">
       {/* Marquee Ribbon */}
       <div className="absolute left-0 top-8 z-0 w-full overflow-hidden select-none pointer-events-none">
         <div className="relative mx-auto max-w-full overflow-hidden rounded-[30px] border border-brand-primary/10 bg-gradient-to-r from-[var(--color-bg-base)] via-white/75 to-[var(--color-bg-base)] py-3 shadow-[0_18px_50px_rgba(21,121,193,0.08)] backdrop-blur-md">
@@ -72,30 +72,30 @@ const Stats = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-28 h-90">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 mb-16 lg:mb-32">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 pt-24 sm:px-6 sm:pt-28 lg:px-8">
+        <div className="mb-10 grid grid-cols-1 gap-12 lg:mb-32 lg:grid-cols-12 lg:gap-8">
 
           {/* Left Column */}
-          <div className="lg:col-span-5 flex flex-col items-start justify-center">
+          <div className="flex flex-col items-center justify-center text-center lg:col-span-5 lg:items-start lg:text-left">
             <span className="text-xs font-bold tracking-widest text-gray-500 uppercase mb-4">(SUSTAINED SUCCESS)</span>
-            <h2 className="text-5xl md:text-6xl font-bold font-heading text-black tracking-tighter mb-8 leading-tight">
+            <h2 className="mb-6 text-4xl font-bold leading-tight tracking-tight text-black sm:text-5xl md:text-6xl lg:mb-8 lg:tracking-tighter">
               Agency <span className="text-gradient pr-2 pb-1 inline-block">Goals</span>
             </h2>
-            <button className="px-6 py-3 text-black rounded-full border border-black/20 text-xs font-bold tracking-widest uppercase hover:bg-black hover:text-white transition-colors flex items-center gap-3">
+            <button className="flex items-center gap-3 rounded-full border border-black/20 px-6 py-3 text-xs font-bold uppercase tracking-widest text-black transition-colors hover:bg-black hover:text-white">
               MORE ABOUT AGENCY
               <span className="w-1.5 h-1.5 rounded-full bg-black group-hover:bg-white transition-colors" />
             </button>
           </div>
 
           {/* Right Column - Grid */}
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-12 lg:gap-16 mt-8 lg:mt-0">
+          <div className="mt-2 grid grid-cols-2 gap-4 text-center sm:gap-8 lg:col-span-7 lg:mt-0 lg:gap-16 lg:text-left">
             {stats.map((stat, idx) => (
-              <div key={idx} className="flex flex-col border-b border-black/20 pb-4">
-                <div className="text-6xl md:text-7xl font-bold font-heading text-black tracking-tighter mb-2 flex items-baseline">
+              <div key={idx} className="flex min-h-36 flex-col items-center justify-center rounded-2xl border border-black/10 bg-white/55 p-4 shadow-sm backdrop-blur-sm sm:min-h-0 sm:rounded-none sm:border-x-0 sm:border-t-0 sm:bg-transparent sm:p-0 sm:shadow-none lg:items-start">
+                <div className="mb-2 flex items-baseline text-4xl font-bold tracking-tight text-black sm:text-5xl md:text-7xl lg:tracking-tighter">
                   <Counter from={0} to={stat.value} duration={2 + idx * 0.2} />
                   <span>{stat.suffix}</span>
                 </div>
-                <p className="text-sm font-medium text-gray-600">{stat.label}</p>
+                <p className="text-xs font-medium leading-5 text-gray-600 sm:text-sm">{stat.label}</p>
               </div>
             ))}
           </div>
