@@ -36,7 +36,7 @@ const Hero = () => {
         <div className="flex w-full items-center justify-center text-center">
           <h1 className="flex w-full items-center justify-center text-[clamp(2.05rem,10.5vw,3.5rem)] font-bold leading-none tracking-tight sm:text-[11vw] lg:text-[12vw] lg:tracking-tighter">
             <span className="text-gradient">Forward Pro</span>
-            <div className="relative inline-flex items-center justify-center overflow-hidden">
+            <div className="relative inline-flex items-center justify-center overflow-hidden pr-2">
               <AnimatePresence mode="wait">
                 <motion.span
                   key={suffixes[index]}
@@ -49,8 +49,8 @@ const Hero = () => {
                   {suffixes[index]}
                 </motion.span>
               </AnimatePresence>
-              {/* invisible spacer to keep layout stable, using 'cess' which is the wider word */}
-              <span className="invisible">cess</span>
+              {/* invisible spacer to keep layout stable, using 'duct' which is the widest word */}
+              <span className="invisible">duct</span>
             </div>
           </h1>
         </div>
