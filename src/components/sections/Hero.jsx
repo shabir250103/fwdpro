@@ -34,10 +34,9 @@ const Hero = () => {
       <div className="relative z-10 flex w-full flex-col items-center justify-center px-4">
         
         <div className="flex w-full items-center justify-center text-center">
-          {/* Adjusted text size to ensure it fits perfectly without overflowing */}
           <h1 className="flex w-full items-center justify-center text-[clamp(2.05rem,10.5vw,3.5rem)] font-bold leading-none tracking-tight sm:text-[11vw] lg:text-[12vw] lg:tracking-tighter">
-            <span className="text-gradient pr-1">Forward Pro</span>
-            <div className="relative inline-flex h-[clamp(2.25rem,11.5vw,3.85rem)] items-center overflow-hidden sm:h-[12vw] lg:h-[13vw]">
+            <span className="text-gradient">Forward Pro</span>
+            <div className="relative inline-flex items-center justify-center overflow-hidden">
               <AnimatePresence mode="wait">
                 <motion.span
                   key={suffixes[index]}
@@ -45,13 +44,13 @@ const Hero = () => {
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: "-100%", opacity: 0 }}
                   transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                  className="absolute left-0 text-gradient pr-2 pb-2"
+                  className="absolute inset-0 flex items-center justify-start text-gradient"
                 >
                   {suffixes[index]}
                 </motion.span>
               </AnimatePresence>
-              {/* invisible spacer to keep layout stable */}
-              <span className="invisible pl-1 pr-4">duct</span>
+              {/* invisible spacer to keep layout stable, using 'cess' which is the wider word */}
+              <span className="invisible">cess</span>
             </div>
           </h1>
         </div>
