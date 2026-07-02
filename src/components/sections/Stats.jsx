@@ -3,7 +3,7 @@ import { motion, useInView, useMotionValue, useTransform, animate } from 'framer
 
 const Counter = ({ from, to, duration = 2 }) => {
   const nodeRef = useRef();
-  const inView = useInView(nodeRef, { once: true, margin: "-100px" });
+  const inView = useInView(nodeRef, { once: true });
   const count = useMotionValue(from);
   const rounded = useTransform(count, (latest) => Math.round(latest));
 
