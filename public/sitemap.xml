@@ -2,32 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Core Pages -->
   <url>
-    <loc>https://fwdpro.com/</loc>
+    <loc>https://fwdpro.in/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://fwdpro.com/design</loc>
+    <loc>https://fwdpro.in/design</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fwdpro.com/development</loc>
+    <loc>https://fwdpro.in/development</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fwdpro.com/product</loc>
+    <loc>https://fwdpro.in/product</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fwdpro.com/marketing</loc>
+    <loc>https://fwdpro.in/marketing</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fwdpro.com/support</loc>
+    <loc>https://fwdpro.in/support</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -35,75 +35,75 @@
   <!-- Service Detail Pages -->
   <!-- Design -->
   <url>
-    <loc>https://fwdpro.com/services/ui-ux</loc>
+    <loc>https://fwdpro.in/services/ui-ux</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fwdpro.com/services/branding</loc>
+    <loc>https://fwdpro.in/services/branding</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fwdpro.com/services/graphics</loc>
+    <loc>https://fwdpro.in/services/graphics</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- Development -->
   <url>
-    <loc>https://fwdpro.com/services/website-development</loc>
+    <loc>https://fwdpro.in/services/website-development</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fwdpro.com/services/app-development</loc>
+    <loc>https://fwdpro.in/services/app-development</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fwdpro.com/services/ecommerce-development</loc>
+    <loc>https://fwdpro.in/services/ecommerce-development</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- Marketing -->
   <url>
-    <loc>https://fwdpro.com/services/digital-marketing</loc>
+    <loc>https://fwdpro.in/services/digital-marketing</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fwdpro.com/services/seo</loc>
+    <loc>https://fwdpro.in/services/seo</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fwdpro.com/services/growth</loc>
+    <loc>https://fwdpro.in/services/growth</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- Support -->
   <url>
-    <loc>https://fwdpro.com/services/maintenance</loc>
+    <loc>https://fwdpro.in/services/maintenance</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fwdpro.com/services/client-success</loc>
+    <loc>https://fwdpro.in/services/client-success</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- Product -->
   <url>
-    <loc>https://fwdpro.com/services/research</loc>
+    <loc>https://fwdpro.in/services/research</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fwdpro.com/services/strategy</loc>
+    <loc>https://fwdpro.in/services/strategy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
