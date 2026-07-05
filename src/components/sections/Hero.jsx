@@ -14,12 +14,12 @@ const Hero = () => {
   }, [suffixes.length]);
 
   return (
-    <section id="home" className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[var(--color-bg-base)] pt-20 sm:pt-0">
+    <section id="home" className="relative flex sm:min-h-screen items-start sm:items-center justify-center overflow-hidden bg-[var(--color-bg-base)] pt-28 pb-16 sm:pt-0 sm:pb-0">
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden flex flex-col justify-center opacity-[0.04]">
         {[...Array(20)].map((_, i) => (
-          <div 
-            key={i} 
+          <div
+            key={i}
             className={`whitespace-nowrap text-[5vw] font-bold font-heading leading-[0.85] tracking-tighter ${i % 2 === 0 ? '-ml-10' : 'ml-0'}`}
           >
             forward products forward products forward products forward products forward products
@@ -32,9 +32,11 @@ const Hero = () => {
 
       {/* Main Huge Typography Content - Fitted to screen */}
       <div className="relative z-10 flex w-full flex-col items-center justify-center px-4">
-        
+
         <div className="flex w-full items-center justify-center text-center">
-          <h1 className="flex w-full items-center justify-center text-[clamp(2.05rem,10.5vw,3.5rem)] font-bold leading-none tracking-tight sm:text-[11vw] lg:text-[12vw] lg:tracking-tighter">
+
+          {/* ── DESKTOP (sm+): original single-line layout ── */}
+          <h1 className="hidden sm:flex w-full items-center justify-center text-[18vw] font-bold leading-none tracking-tight lg:text-[12vw] lg:tracking-tighter">
             <span className="text-gradient">Forward Pro</span>
             <div className="relative inline-flex items-center justify-center overflow-hidden pr-2">
               <AnimatePresence mode="wait">
@@ -49,13 +51,38 @@ const Hero = () => {
                   {suffixes[index]}
                 </motion.span>
               </AnimatePresence>
-              {/* invisible spacer to keep layout stable, using 'duct' which is the widest word */}
               <span className="invisible">duct</span>
             </div>
           </h1>
+
+          {/* ── MOBILE (below sm): two-line layout ── */}
+
+          <h1 className="flex sm:hidden w-full flex-col items-center justify-center font-bold leading-[1.05] tracking-tight">
+            <span className="text-gradient text-[clamp(4rem,24vw,5.5rem)]">Forward</span>
+            <span className="flex items-center justify-center text-[clamp(3rem,18vw,4.1rem)]">
+              <span className="text-gradient">Pro</span>
+              <div className="relative inline-flex items-center justify-center overflow-hidden pr-2">
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={suffixes[index]}
+                    initial={{ y: "100%", opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: "-100%", opacity: 0 }}
+                    transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                    className="absolute inset-0 flex items-center justify-start text-gradient"
+                  >
+                    {suffixes[index]}
+                  </motion.span>
+                </AnimatePresence>
+                <span className="invisible">duct</span>
+              </div>
+            </span>
+          </h1>
+
         </div>
 
-        <div className="mt-10 flex w-full max-w-sm flex-col items-center gap-4 text-center sm:mt-12 sm:max-w-none sm:gap-5">
+
+        <div className="mt-8 flex w-full max-w-sm flex-col items-center gap-4 text-center sm:mt-12 sm:max-w-none sm:gap-5">
           <div className="inline-flex max-w-full items-center rounded-full border border-black/10 bg-white/80 px-4 py-2 text-center text-[10px] font-semibold uppercase tracking-[0.16em] text-gray-700 shadow-sm backdrop-blur-sm sm:text-xs sm:tracking-[0.24em]">
             Crafted for startups, scaleups, and ambitious digital products
           </div>
