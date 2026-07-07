@@ -81,7 +81,7 @@ const ConnectModal = ({ isOpen, onClose }) => {
 
             <div className="grid gap-3">
               <a
-                href="https://wa.me/9344078224"
+                href="https://wa.me/8531920610"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex w-full items-center justify-start gap-3 rounded-[20px] bg-gradient-to-r from-[var(--color-brand-primary)] to-[var(--color-brand-secondary)] px-4 py-3 text-white font-semibold"
@@ -91,7 +91,7 @@ const ConnectModal = ({ isOpen, onClose }) => {
               </a>
 
               <a
-                href="mailto:hello@fwdpro.com"
+                href="mailto:info@fwdpro.in"
                 className="inline-flex w-full items-center justify-start gap-3 rounded-[20px] bg-white text-brand-secondary px-4 py-3 border border-brand-primary/10"
               >
                 <Mail className="h-4 w-4" />
@@ -99,7 +99,7 @@ const ConnectModal = ({ isOpen, onClose }) => {
               </a>
 
               <a
-                href="https://instagram.com/fwdpro_solutions"
+                href="https://www.instagram.com/_fwdpro?igsh=NjRjZ3BodHhudHUz"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex w-full items-center justify-start gap-3 rounded-[20px] bg-white text-brand-secondary px-4 py-3 border border-brand-primary/10"
@@ -119,7 +119,7 @@ const ConnectModal = ({ isOpen, onClose }) => {
               </a>
 
               <a
-                href="https://x.com/fwdpro"
+                href="https://x.com/Fwd_pro"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex w-full items-center justify-start gap-3 rounded-[20px] bg-white text-brand-secondary px-4 py-3 border border-brand-primary/10"
@@ -129,7 +129,7 @@ const ConnectModal = ({ isOpen, onClose }) => {
               </a>
 
               <a
-                href="https://linkedin.com/company/fwdpro"
+                href="https://www.linkedin.com/in/fwd-pro/"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex w-full items-center justify-start gap-3 rounded-[20px] bg-white text-brand-secondary px-4 py-3 border border-brand-primary/10"
